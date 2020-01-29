@@ -1,8 +1,4 @@
 sceneSetups:
-<<<<<<< HEAD
-- path: Assets/Scenes/Menu.unity
-=======
-- path: Assets/Scenes/GameScene.unity
->>>>>>> game
+- path: Assets/Scenes/GamePicker.unity
   isLoaded: 1
   isActive: 1
