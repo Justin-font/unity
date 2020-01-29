@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GamePicker.unity
     guid: dc5ce6eb24494408ba32cc6547197a03
+  - enabled: 1
+    path: Assets/Scenes/GameScene.unity
+    guid: 8566ea1db904303408515bb8bf7b896b
   m_configObjects: {}
