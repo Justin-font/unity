@@ -10,18 +10,16 @@ public class PlayerController : MonoBehaviour
     private Vector3 jump;
 
     public int speed;
-    public Text question1;
-    public Text question2;
-    public Text question3;
-    public Text question4;
-    public Text question5;
+
+    public List<Text> leftAnswers;
+    public List<Text> questions;
+    public List<Text> rightAnswers;
     
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         jump = new Vector3(0.0f, 2.0f, 0.0f);
-        question1.text = "";
     }
 
     void OnCollisionStay()
@@ -43,6 +41,14 @@ public class PlayerController : MonoBehaviour
      
             rb.AddForce(jump * 3.0f, ForceMode.Impulse);
             isGrounded = false;
+        }
+    }
+
+    void OnTriggerEnter(Collider other) 
+    {
+        if (other.gameObject.CompareTag ("Door"))
+        {
+            other.gameObject.SetActive (false);
         }
     }
 }
