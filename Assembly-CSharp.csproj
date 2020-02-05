@@ -64,11 +64,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\CameraController.cs" />
+    <Compile Include="Assets\Scripts\Creator.cs" />
     <Compile Include="Assets\Scripts\InstantiationExample.cs" />
     <Compile Include="Assets\Scripts\Main.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\Question.cs" />
+    <Compile Include="Assets\Scripts\Questions.cs" />
     <Compile Include="Assets\Scripts\ScoreManager.cs" />
+    <None Include="Assets\data\_game 1_.txt" />
+    <None Include="Assets\data\_1_.txt" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>/Users/justin/New Unity Project/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>

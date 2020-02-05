@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 public class Main : MonoBehaviour
@@ -50,10 +51,21 @@ public class Main : MonoBehaviour
 
     }
 
+
     public void BackToMenu()
     {
         SceneManager.LoadScene(0);
 
+    }
+
+    internal static Questions readJSON(String path)
+    {
+        print(path);
+        String jsonString;
+        jsonString = File.ReadAllText(path);
+        print(jsonString);
+        Questions questions = JsonUtility.FromJson<Questions>(jsonString);
+        return questions;
     }
 
 

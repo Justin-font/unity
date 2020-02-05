@@ -11,21 +11,29 @@ public class InstantiationExample : MonoBehaviour
     void Start()
     {
         // Instantiate at position (0, 0, 0) and zero rotation.
-        for (int i = 0; i < 10; i++)
+        foreach (string file in System.IO.Directory.GetFiles(Application.dataPath + "/data", "*.txt"))
         {
+            print(file);
             GameObject goButton = (GameObject)Instantiate(myPrefab);
-        goButton.transform.SetParent(GameObject.Find("Grid").transform, false);
-        goButton.transform.localScale = new Vector3(1, 1, 1);
-
-        Button tempButton = goButton.GetComponent<Button>();
-        int tempInt = i;
-        tempButton.onClick.AddListener(() => ButtonClicked(tempInt));
-           goButton.GetComponentInChildren<Text>().text = i.ToString();
+            goButton.transform.SetParent(GameObject.Find("Grid").transform, false);
+            goButton.transform.localScale = new Vector3(1, 1, 1);
+            Button tempButton = goButton.GetComponent<Button>();
+            tempButton.onClick.AddListener(() => ButtonClicked(file));
+            goButton.GetComponentInChildren<Text>().text = file.Split('_')[1].Split('_')[0];
+            
         }
     }
-    void ButtonClicked(int buttonNo)
+    void ButtonClicked(string path)
     {
-        Debug.Log("Button clicked = " + buttonNo);
+        Debug.Log("Button clicked = " + path);
+        Questions questions = Main.readJSON(path);;
+
+        foreach (Question question in questions.questions)
+        {
+            Debug.Log("Found game : " + question.question + " " + question.trueResponse + " " + question.falseResponse);
+        }
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
+
+
 }
