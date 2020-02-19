@@ -1,6 +1,9 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Creator : MonoBehaviour
@@ -16,7 +19,7 @@ public class Creator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        gameName = "unamed";
     }
 
     // Update is called once per frame
@@ -68,7 +71,20 @@ public class Creator : MonoBehaviour
             Debug.Log("Found game : " + q.question + " " + q.trueResponse + " " + q.falseResponse);
         }
 
-        print(questions);
 
+    }
+
+    public void generate()
+    {
+
+        print(questions);
+        print(gameName);
+        string jsonData = JsonUtility.ToJson(questions, true);
+
+        DateTime dt = System.DateTime.Now;
+        long time = new DateTimeOffset(DateTime.Now).ToUnixTimeSeconds();
+        File.WriteAllText(Application.dataPath + "/data/_" + gameName +  "_" +time + ".txt", jsonData);
+
+        SceneManager.LoadScene(0);
     }
 }

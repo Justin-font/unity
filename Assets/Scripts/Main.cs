@@ -50,6 +50,12 @@ public class Main : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 
     }
+    public void Creator()
+    {
+        print(" creator ");
+        SceneManager.LoadScene(3);
+
+    }
 
 
     public void BackToMenu()
