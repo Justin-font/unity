@@ -26,7 +26,7 @@ public class InstantiationExample : MonoBehaviour
     void ButtonClicked(string path)
     {
         Debug.Log("Button clicked = " + path);
-        Questions questions = Main.readJSON(path);;
+        Questions questions = Main.readJSON(path);
 
         foreach (Question question in questions.questions)
         {
