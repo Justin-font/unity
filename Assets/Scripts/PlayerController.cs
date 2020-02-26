@@ -10,10 +10,6 @@ public class PlayerController : MonoBehaviour
     private Vector3 jump;
 
     public int speed;
-
-    public List<Text> leftAnswers;
-    public List<Text> questions;
-    public List<Text> rightAnswers;
     
     // Start is called before the first frame update
     void Start()
@@ -46,9 +42,10 @@ public class PlayerController : MonoBehaviour
 
     void OnTriggerEnter(Collider other) 
     {
-        if (other.gameObject.CompareTag ("Door"))
+        if (other.gameObject.CompareTag("Door"))
         {
-            other.gameObject.SetActive (false);
+            //anim.SetBool("open", true);
+            //other.gameObject.SetActive(false);
         }
     }
 }
