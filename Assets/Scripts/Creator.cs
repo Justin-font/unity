@@ -15,6 +15,7 @@ public class Creator : MonoBehaviour
     public string questionSubject;
     public string falseResponse;
     public string trueResponse;
+    public GameObject myPrefab;
 
     // Start is called before the first frame update
     void Start()
@@ -66,10 +67,11 @@ public class Creator : MonoBehaviour
         questionSubject = "";
         falseResponse = "";
         trueResponse = "";
-        foreach (Question q in questions)
-        {
-            Debug.Log("Found game : " + q.question + " " + q.trueResponse + " " + q.falseResponse);
-        }
+            GameObject questionDetail = (GameObject)Instantiate(myPrefab);
+            questionDetail.transform.SetParent(GameObject.Find("Grid_question").transform, false);
+            questionDetail.transform.localScale = new Vector3(1, 1, 1);
+           // questionDetail.SetSizeWithCurrentAnchors()
+            //questionDetail.
 
 
     }
@@ -87,4 +89,6 @@ public class Creator : MonoBehaviour
 
         SceneManager.LoadScene(0);
     }
+
+
 }

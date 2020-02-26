@@ -202,6 +202,7 @@ GameObject:
   - component: {fileID: 313781160}
   - component: {fileID: 313781162}
   - component: {fileID: 313781163}
+  - component: {fileID: 313781164}
   m_Layer: 5
   m_Name: LevelPanel
   m_TagString: Untagged
@@ -307,6 +308,20 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &313781164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 313781158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5c758844472c4c8b92de990b5908330, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myPrefab: {fileID: 8952819153050788646, guid: 6a10f7840943d423a9e2f3982cb80f1e,
+    type: 3}
 --- !u!1 &657715628
 GameObject:
   m_ObjectHideFlags: 0
@@ -978,7 +993,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1669269562}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f5c758844472c4c8b92de990b5908330, type: 3}
   m_Name: 
