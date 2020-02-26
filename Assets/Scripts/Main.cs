@@ -8,7 +8,7 @@ public class Main : MonoBehaviour
 {
     public ScoreManager scoreManager;
     static Main _instance;
-    
+    public static String currentGamePath;
     public static Main Instance
     {
         get
@@ -28,8 +28,9 @@ public class Main : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-//        scoreManager.Reset();
-    }
+        //        scoreManager.Reset();
+        currentGamePath = "";
+;    }
 
     // Update is called once per frame
     void Update()
@@ -73,7 +74,6 @@ public class Main : MonoBehaviour
         Questions questions = JsonUtility.FromJson<Questions>(jsonString);
         return questions;
     }
-
 
 
 }

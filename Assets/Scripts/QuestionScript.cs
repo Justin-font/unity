@@ -12,9 +12,10 @@ public class QuestionScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        print("selected game   : " + Main.currentGamePath);
         int index = 0;
 
-        Questions load_questions = Main.readJSON("Assets/data/_game 1_.txt");
+        Questions load_questions = Main.readJSON(Main.currentGamePath);
 
         foreach (Question question in load_questions.questions)
         {
@@ -28,6 +29,7 @@ public class QuestionScript : MonoBehaviour
                     rightAnswers[index].text = question.trueResponse;
                 }
                 questions[index].text = question.question;
+                index += 1;
             }
         }
     }

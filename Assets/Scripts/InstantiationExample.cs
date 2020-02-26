@@ -32,6 +32,7 @@ public class InstantiationExample : MonoBehaviour
         {
             Debug.Log("Found game : " + question.question + " " + question.trueResponse + " " + question.falseResponse);
         }
+        Main.currentGamePath = path;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 

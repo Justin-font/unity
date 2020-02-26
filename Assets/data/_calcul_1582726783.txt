@@ -1,0 +1,29 @@
+{
+    "questions": [
+        {
+            "question": "4-1/2",
+            "trueResponse": "3,5",
+            "falseResponse": "3"
+        },
+        {
+            "question": "12x3 +2",
+            "trueResponse": "38",
+            "falseResponse": "28"
+        },
+        {
+            "question": "30-6x2",
+            "trueResponse": "18",
+            "falseResponse": "26"
+        },
+        {
+            "question": "9+2-6",
+            "trueResponse": "5",
+            "falseResponse": "12"
+        },
+        {
+            "question": "20-10x3",
+            "trueResponse": "-10",
+            "falseResponse": "10"
+        }
+    ]
+}
