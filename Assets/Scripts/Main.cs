@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 public class Main : MonoBehaviour
@@ -75,5 +76,16 @@ public class Main : MonoBehaviour
         return questions;
     }
 
+    public void Import()
+    {
+        string file = EditorUtility.OpenFilePanel("Import game", "", "");
+        if (file.EndsWith(".txt"))
+        {
+            string[] split = file.Split('/');
+            print(split[split.Length - 1]);
+            print("copy");
+            FileUtil.CopyFileOrDirectory(file, Application.dataPath + "/data/"+split[split.Length-1]);
+        }
+    }
 
 }

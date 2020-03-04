@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -192,7 +193,13 @@ public class Creator : MonoBehaviour
             print(jsonData);
 
             long time = new DateTimeOffset(DateTime.Now).ToUnixTimeSeconds();
-            File.WriteAllText(Application.dataPath + "/data/_" + gameName + "_" + time + ".txt", jsonData);
+            string path = EditorUtility.OpenFolderPanel("generate", "", "");
+            if (path == "")
+            {
+                path = Application.dataPath + "/data";
+            }
+            print(path);
+            File.WriteAllText(path+"/_" + gameName + "_" + time + ".txt", jsonData);
 
             SceneManager.LoadScene(0);
         }
