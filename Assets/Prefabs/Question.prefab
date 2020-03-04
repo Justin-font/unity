@@ -99,18 +99,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &8740042367402731016
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1249965526229467556}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21de66946c9bed249ae8c83c64875edb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!95 &8482802997051853919
 Animator:
   serializedVersion: 3
@@ -130,6 +118,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &8740042367402731016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1249965526229467556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21de66946c9bed249ae8c83c64875edb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!95 &7142526736087155604
 Animator:
   serializedVersion: 3
@@ -1162,6 +1162,26 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Door
       objectReference: {fileID: 0}
+    - target: {fileID: 7450343891313826347, guid: 5b5915f1092d9614eb63aa31b98e6ac0,
+        type: 3}
+      propertyPath: m_Center.z
+      value: -33.355408
+      objectReference: {fileID: 0}
+    - target: {fileID: 7450343891313826347, guid: 5b5915f1092d9614eb63aa31b98e6ac0,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 62.128906
+      objectReference: {fileID: 0}
+    - target: {fileID: 7450343891313826347, guid: 5b5915f1092d9614eb63aa31b98e6ac0,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 1.3016214
+      objectReference: {fileID: 0}
+    - target: {fileID: 7450343891313826347, guid: 5b5915f1092d9614eb63aa31b98e6ac0,
+        type: 3}
+      propertyPath: m_Center.x
+      value: -0.0037112236
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b5915f1092d9614eb63aa31b98e6ac0, type: 3}
 --- !u!4 &8440857181008123137 stripped
@@ -1247,6 +1267,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Door
+      objectReference: {fileID: 0}
+    - target: {fileID: 7450343891313826347, guid: 5b5915f1092d9614eb63aa31b98e6ac0,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 53.28534
+      objectReference: {fileID: 0}
+    - target: {fileID: 7450343891313826347, guid: 5b5915f1092d9614eb63aa31b98e6ac0,
+        type: 3}
+      propertyPath: m_Center.z
+      value: -26.14267
+      objectReference: {fileID: 0}
+    - target: {fileID: 7450343891313826347, guid: 5b5915f1092d9614eb63aa31b98e6ac0,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 1.2547162
+      objectReference: {fileID: 0}
+    - target: {fileID: 7450343891313826347, guid: 5b5915f1092d9614eb63aa31b98e6ac0,
+        type: 3}
+      propertyPath: m_Center.x
+      value: -0.06436312
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b5915f1092d9614eb63aa31b98e6ac0, type: 3}

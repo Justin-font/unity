@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,12 +11,14 @@ public class PlayerController : MonoBehaviour
     private Vector3 jump;
 
     public int speed;
+    public int step;
     
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         jump = new Vector3(0.0f, 2.0f, 0.0f);
+        step = 0;
     }
 
     void OnCollisionStay()
@@ -47,5 +50,10 @@ public class PlayerController : MonoBehaviour
             //anim.SetBool("open", true);
             //other.gameObject.SetActive(false);
         }
+    }
+
+    void OnDisable()
+    {
+
     }
 }

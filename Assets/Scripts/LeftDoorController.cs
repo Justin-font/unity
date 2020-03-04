@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 
 public class LeftDoorController : MonoBehaviour
@@ -22,7 +23,21 @@ public class LeftDoorController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            anim.SetBool("open", true);
+            anim.SetBool("openLeft", true);
+
+            PlayerController pc = other.gameObject.GetComponent(typeof(PlayerController)) as PlayerController;
+
+            if(QuestionScript.leftAnswerIsTrue[pc.step]){
+                print("Bien joué !");
+            }
+            else{
+                print("Mauvaise réponse...");
+            }
+
+            other.gameObject.SetActive(false);
+            Thread.Sleep(2000);
+            other.gameObject.SetActive(true);
+            pc.step += 1;
         }
     }
 }
