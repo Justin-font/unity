@@ -26,13 +26,21 @@ public class RightDoorController : MonoBehaviour
 
             PlayerController pc = other.gameObject.GetComponent(typeof(PlayerController)) as PlayerController;
 
-            if(!QuestionScript.leftAnswerIsTrue[pc.step]){
+            if(pc.step < QuestionScript.leftAnswerIsTrue.Count && !QuestionScript.leftAnswerIsTrue[pc.step]){
                 print("Bien joué !");
             }
             else{
+                ScoreManager.time += 5.0f;
                 print("Mauvaise réponse...");
             }
+
+            Rigidbody rb = other.gameObject.GetComponent(typeof(Rigidbody)) as Rigidbody;
+            rb.Sleep();
             pc.step += 1;
+
+            if(pc.step > 4){
+                ScoreManager.end = true;
+            }
         }
     }
 }

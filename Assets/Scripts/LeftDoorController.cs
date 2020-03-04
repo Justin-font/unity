@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LeftDoorController : MonoBehaviour
 {
@@ -27,17 +28,21 @@ public class LeftDoorController : MonoBehaviour
 
             PlayerController pc = other.gameObject.GetComponent(typeof(PlayerController)) as PlayerController;
 
-            if(QuestionScript.leftAnswerIsTrue[pc.step]){
+            if(pc.step < QuestionScript.leftAnswerIsTrue.Count && QuestionScript.leftAnswerIsTrue[pc.step]){
                 print("Bien joué !");
             }
             else{
+                ScoreManager.time += 5.0f;
                 print("Mauvaise réponse...");
             }
 
-            other.gameObject.SetActive(false);
-            Thread.Sleep(2000);
-            other.gameObject.SetActive(true);
+            Rigidbody rb = other.gameObject.GetComponent(typeof(Rigidbody)) as Rigidbody;
+            rb.Sleep();
             pc.step += 1;
+
+            if(pc.step > 4){
+                ScoreManager.end = true;
+            }
         }
     }
 }
