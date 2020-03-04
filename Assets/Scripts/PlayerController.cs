@@ -35,8 +35,9 @@ public class PlayerController : MonoBehaviour
         Vector3 movement = new Vector3(moveHorizontal * speed, 0.0f, moveVertical * speed);
 
         rb.AddForce(movement);
+        rb.rotation = Quaternion.Euler(0, 0, 0);
 
-        if(Input.GetKeyDown(KeyCode.Space) && isGrounded){
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded){
      
             rb.AddForce(jump * 3.0f, ForceMode.Impulse);
             isGrounded = false;
