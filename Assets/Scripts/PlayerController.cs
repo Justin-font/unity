@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody rb;
     private bool isGrounded;
     private Vector3 jump;
+    private float time_spent_asleep;
 
     public int speed;
     public int step;
@@ -42,14 +43,30 @@ public class PlayerController : MonoBehaviour
             rb.AddForce(jump * 3.0f, ForceMode.Impulse);
             isGrounded = false;
         }
+
+        if(rb.IsSleeping()){
+            time_spent_asleep += Time.deltaTime;
+            print(time_spent_asleep);
+
+            if (time_spent_asleep > 2.0f){
+                time_spent_asleep = 0.0f;
+                rb.WakeUp();
+                print("Test waking up");
+            }
+        }
+        else{
+            if (time_spent_asleep != 0.0f){
+                print("Test not sleeping");
+                time_spent_asleep = 0.0f;
+            }
+        }
     }
 
     void OnTriggerEnter(Collider other) 
     {
         if (other.gameObject.CompareTag("Door"))
         {
-            //anim.SetBool("open", true);
-            //other.gameObject.SetActive(false);
+        
         }
     }
 
