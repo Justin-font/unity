@@ -83,7 +83,6 @@ public class Main : MonoBehaviour
         {
             string[] split = file.Split('/');
             print(split[split.Length - 1]);
-            print("copy");
             FileUtil.CopyFileOrDirectory(file, Application.dataPath + "/data/"+split[split.Length-1]);
         }
     }
